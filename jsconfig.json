@@ -1,0 +1,53 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "baseUrl": ".",
+      "paths": {
+        "*": [
+          "./*"
+        ],
+        "core": [
+          "src/core"
+        ],
+        "core/*": [
+          "src/core/*"
+        ],
+        "provider": [
+          "src/core/provider"
+        ],
+        "provider/*": [
+          "src/core/provider/*"
+        ],
+        "components": [
+          "src/core/components"
+        ],
+        "components/*": [
+          "src/core/components/*"
+        ],
+        "constants": [
+          "src/core/constants"
+        ],
+        "constants/*": [
+          "src/core/constants/*"
+        ],
+        "interactor": [
+          "src/core/interactor"
+        ],
+        "interactor/*": [
+          "src/core/interactor/*"
+        ],
+        "container": [
+          "src/container"
+        ],
+        "container/*": [
+          "src/container/*"
+        ],
+        "store": [
+          "src/store"
+        ],
+        "store/*": [
+          "src/store/*"
+        ],
+      }
+    }
+  }
