@@ -7,7 +7,7 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.colors.primary};
     position: relative;
 
-    ${({ multiChannel }) => multiChannel ? 'margin-bottom: 20px;' : undefined}
+    // ${({ multiChannel }) => multiChannel ? 'margin-bottom: 20px;' : undefined}
 `
 
 export const Row = styled.div`

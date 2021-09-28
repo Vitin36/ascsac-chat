@@ -5,7 +5,6 @@ import { searchCurrentPosition } from 'provider/serviceQueue/serviceQueue.provid
 function* searchPosition({ data }) {
     try {
         const response = yield call(searchCurrentPosition, {})
-        console.log(response.data)
         yield put(actions.setCurrentPosition(response.data.currentPosition))
         yield put(actions.setWaitingTime(response.data.waitingTime))
         yield put(actions.setIsWaiting(response.data.isWaiting))
