@@ -3,9 +3,10 @@ import Chat from "container/Chat/Chat";
 import { useDispatch, useSelector } from "react-redux";
 import { actions as themeActions } from 'store/actions/theme.action'
 import { actions as configActions } from 'store/actions/config.actions'
+import { actions as globalActions } from 'store/actions/global.actions'
 import ClosedChat from "../ClosedChat/ClosedChat";
 
-const ChatApp = ({ theme, displayCloseIcon, displayWorkerName, displaySubTitle, displayWorkerImage, displayMessageTime, displayMultiChannel }) => {
+const ChatApp = ({ theme, displayCloseIcon, displayWorkerName, displaySubTitle, displayWorkerImage, displayMessageTime, displayMultiChannel, inactivityStart }) => {
     const dispatch = useDispatch()
     const global = useSelector(state => state.global)
 
@@ -16,6 +17,7 @@ const ChatApp = ({ theme, displayCloseIcon, displayWorkerName, displaySubTitle, 
     useEffect(() => dispatch(configActions.changeDisplayWorkerImage(displayWorkerImage)), [displayWorkerImage])
     useEffect(() => dispatch(configActions.changeDisplayMessageTime(displayMessageTime)), [displayMessageTime])
     useEffect(() => dispatch(configActions.changeDisplayMultiChannel(displayMultiChannel)), [displayMultiChannel])
+    useEffect(() => dispatch(globalActions.setDefaultInactivityStart(inactivityStart)), [inactivityStart])
 
     return (
         global.toggledChat ? <ClosedChat /> : <Chat />

@@ -6,11 +6,12 @@ import { useDispatch } from "react-redux"
 import { actions } from "store/actions/serviceQueue.action"
 
 export const ServiceQueue = () => {
-    const { isWaiting, currentPosition, waitingTime } = useSelector(state => state.serviceQueue)
+    const { currentPosition, waitingTime } = useSelector(state => state.serviceQueue)
     const timer = useRef()
     const dispatch = useDispatch()
 
     useEffect(() => {
+        dispatch(actions.searchCurrentPosition())
         timer.current = setInterval(() => {
             dispatch(actions.searchCurrentPosition())
         }, 5000)
@@ -18,9 +19,9 @@ export const ServiceQueue = () => {
 
     useEffect(() => {
         return () => {
-          clearInterval(timer.current);
+            clearInterval(timer.current);
         };
-      }, []);
+    }, []);
 
     return (
         <Container>

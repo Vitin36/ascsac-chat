@@ -40,6 +40,16 @@ app.post('/messages/file', async (req, res) => {
 var serviceQueue = [
     {
         isWaiting: true,
+        currentPosition: 10,
+        waitingTime: '00:15:00'
+    },
+    {
+        isWaiting: true,
+        currentPosition: 5,
+        waitingTime: '00:10:00'
+    },
+    {
+        isWaiting: true,
         currentPosition: 3,
         waitingTime: '00:10:00'
     },
@@ -58,7 +68,6 @@ var serviceQueue = [
 var currentServiceQueue = 0
 
 app.post('/service/queue', async (req, res) => {
-    await new Promise(resolve => setTimeout(resolve, 2500))
     await res.send(serviceQueue[currentServiceQueue])
     currentServiceQueue = currentServiceQueue >= serviceQueue.length - 1 ? 0 : currentServiceQueue + 1
 })

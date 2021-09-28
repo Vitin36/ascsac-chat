@@ -4,6 +4,7 @@ import { Wrapper, Container } from "./style"
 import { Message } from 'components/Message/Message'
 import { Loader } from 'components/Loader/Loader'
 import { ServiceQueue } from 'components/ServiceQueue/ServiceQueue'
+import { ServiceEnded } from 'components/ServiceEnded/ServiceEnded'
 import { FileInput } from "components/FileInput/FileInput"
 import Scroll from 'react-scroll'
 

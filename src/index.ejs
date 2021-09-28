@@ -149,13 +149,27 @@
       bottom: 0;
       right: 0;
       width: 400px;
+      z-index: 10;
+    }
+
+    .background {
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-image: url("https://www.w3schools.com/w3images/ny.jpg");
+      background-size: cover;
+      background-position: center center;
     }
   </style>
 </head>
 
 <body>
-  <ascsac-chat font="poppins" theme="default" displayworkername="true" displaycloseicon="true" displaysubtitle="true"
-    displayworkerimage="true" displaymessagetime="true" displaymultichannel="false">
+  <div class="background"></div>
+  <ascsac-chat font="poppins" theme="blue" displayworkername="true" displaycloseicon="true" displaysubtitle="true"
+    displayworkerimage="true" displaymessagetime="true" displaymultichannel="false" inactivityStart="5000">
   </ascsac-chat>
 </body>
 
