@@ -6,6 +6,7 @@ const initialState = {
     currentMessage: '',
     workerName: 'SOFIA',
     messages: [
+        // { isWorker: true, message: 'O que achou do nosso atendimento ? <div style="display:flex; flex-direction: column"><div style="display: flex; align-items: center; margin-top: 16px;"><input type="radio" name="inpt" value="otimo" /> <label for="inpt">Ótimo</label></div><div style="display: flex; align-items: center; margin-top: 16px;"><input type="radio" name="inpt" value="bom"/> <label for="inpt">Bom</label></div><div style="display: flex; align-items: center; margin-top: 16px;"><input type="radio" name="inpt" value="ruim"/> <label for="inpt">Ruim</label></div></div>' },
         { isWorker: true, message: 'Olá, qual o seu nome ?', time: '28/09/2021 03:21:55' },
         { isWorker: false, message: 'Gabriel', time: '28/09/2021 03:22:00' },
         { isWorker: true, message: 'Seu protocolo de atendimento é 202000099551<br><br>É sempre um prazer em te atender <b>Gabriel</b><br><br> Em que posso ajudar ?', time: '28/09/2021 03:22:15' },

@@ -6,8 +6,7 @@ import { useSelector } from "react-redux"
 
 export const Message = ({ isWorker, message, time, workerName, children, isFile, error, type }) => {
     const { displayWorkerImage, displayMessageTime, displayWorkerName } = useSelector(state => state.config)
-    console.log(type)
-
+    
     const renderWorkerImage = () => (
         isWorker && displayWorkerImage ? <WorkerImage src={worker} /> : undefined
     )

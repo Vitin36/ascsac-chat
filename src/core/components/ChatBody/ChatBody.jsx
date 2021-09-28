@@ -1,13 +1,15 @@
 import React, { useEffect } from "react"
 import { useSelector } from "react-redux"
-import { Container } from "./style"
+import { Wrapper, Container } from "./style"
 import { Message } from 'components/Message/Message'
 import { Loader } from 'components/Loader/Loader'
+import { ServiceQueue } from 'components/ServiceQueue/ServiceQueue'
 import { FileInput } from "components/FileInput/FileInput"
 import Scroll from 'react-scroll'
 
 const ChatBody = () => {
     const { isLoading, messages, workerName } = useSelector(state => state.messages)
+    const { isWaiting } = useSelector(state => state.serviceQueue)
 
     useEffect(() => {
         Scroll.scroller.scrollTo('scrollabeBottomElement', {
@@ -39,11 +41,20 @@ const ChatBody = () => {
         isLoading ? <Loader /> : undefined
     )
 
+    const renderContent = () => (
+        isWaiting ? <ServiceQueue /> :
+            <>
+                {renderMessages()}
+                {renderLoading()}
+            </>
+    )
+
     return (
         <Container id="scrollabeContainer">
-            {renderMessages()}
-            {renderLoading()}
-            <Scroll.Element name="scrollabeBottomElement"></Scroll.Element>
+            <Wrapper centered={isWaiting}>
+                {renderContent()}
+                <Scroll.Element name="scrollabeBottomElement"></Scroll.Element>
+            </Wrapper>
         </Container>
     )
 }

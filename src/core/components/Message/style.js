@@ -39,9 +39,43 @@ export const StyledMessage = styled.div`
     ${({ type }) => type && themeConstant.modal[type] ? `background-color: ${themeConstant.modal[type]};` : undefined}
     ${({ type }) => type && themeConstant.modalText[type] ? `color: ${themeConstant.modalText[type]};` : undefined}
 
-    & b, & span, & label {
+    & b {
         font-weight: 700;
     }
+    
+    & input[type='radio'] {
+        display: none;
+    }
+      
+    & label {
+        font-weight: normal;
+        position: relative;
+    }
+      
+    & label:before {
+        content: " ";
+        display: inline-block;
+        position: relative;
+        top: 2.5px;
+        margin: 0 5px 0 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 11px;
+        border: 2px solid #707070;
+        background-color: transparent;
+    }
+      
+     & input[type=radio]:checked + label:after {
+        border-radius: 11px;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 4px;
+        left: 1px;
+        content: " ";
+        display: block;
+        background: ${({ theme }) => theme.colors.primary};
+      }
 `
 
 export const Time = styled.span`

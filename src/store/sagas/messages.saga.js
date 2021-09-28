@@ -1,7 +1,7 @@
 import { takeLatest, all, call, put } from 'redux-saga/effects'
-import { actions, types } from '../actions/messages.actions'
+import { actions, types } from 'store/actions/messages.actions'
 import { sendFileMessage, sendMessage } from 'provider/message/message.provider'
-import { actions as globalActions } from '../actions/global.actions'
+import { actions as globalActions } from 'store/actions/global.actions'
 
 function* handleNewMessage({ data }) {
     try {
