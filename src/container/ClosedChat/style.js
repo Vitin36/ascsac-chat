@@ -6,6 +6,10 @@ export const Container = styled.div`
     padding: ${padding.s};
     background: ${({ theme }) => theme.colors.primary};
     cursor: pointer;
+    width: 250px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 `
 
 export const Row = styled.div`

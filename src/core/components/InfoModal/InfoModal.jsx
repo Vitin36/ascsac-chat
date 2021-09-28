@@ -26,7 +26,7 @@ const InfoModal = () => {
 
     return (
         hasError || hasWarning || hasSuccess ?
-            <StyledModal show={hasError}>
+            <StyledModal>
                 <StyledBackground
                     isError={hasError}
                     isWarning={hasWarning}

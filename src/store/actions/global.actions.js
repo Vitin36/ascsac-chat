@@ -4,6 +4,7 @@ export const types = {
     SET_HAS_ERROR: 'GLOBAL/SET_HAS_ERROR',
     SET_HAS_WARNING: 'GLOBAL/SET_HAS_WARNING',
     SET_HAS_SUCCESS: 'GLOBAL/SET_HAS_SUCCESS',
+    SET_CLOSE_MODAL: 'GLOBAL/SET_CLOSE_MODAL',
 }
 
 export const actions = {
@@ -12,4 +13,5 @@ export const actions = {
     setHasError: data => ({ type: types.SET_HAS_ERROR, data }),
     setHasWarning: data => ({ type: types.SET_HAS_WARNING, data }),
     setHasSuccess: data => ({ type: types.SET_HAS_SUCCESS, data }),
+    setCloseModal: data => ({ type: types.SET_CLOSE_MODAL, data }),
 }

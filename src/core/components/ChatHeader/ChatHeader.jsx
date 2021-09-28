@@ -19,7 +19,7 @@ const ChatHeader = () => {
     )
 
     const renderButtonIcon = () => {
-        const handleClick = () => dispatch(actions.toggleChat())
+        const handleClick = () => config.displayCloseIcon ? dispatch(actions.setCloseModal(true)) : dispatch(actions.toggleChat())
         return (
             <Button className="ChatHeaderButton" onClick={handleClick}>
                 <img src={config.displayCloseIcon ? closeIcon : downArrow} />
