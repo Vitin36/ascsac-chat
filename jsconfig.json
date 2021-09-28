@@ -6,6 +6,12 @@
         "*": [
           "./*"
         ],
+        "assets": [
+          "src/assets"
+        ],
+        "assets/*": [
+          "src/assets/*"
+        ],
         "core": [
           "src/core"
         ],

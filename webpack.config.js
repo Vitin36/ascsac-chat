@@ -27,6 +27,7 @@ module.exports = {
 
   resolve: {
     alias: {
+      assets: path.resolve(__dirname, './src/assets'),
       components: path.resolve(__dirname, './src/core/components'),
       constants: path.resolve(__dirname, './src/core/constants'),
       core: path.resolve(__dirname, './src/core'),

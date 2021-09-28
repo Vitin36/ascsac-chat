@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -17,7 +16,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
+    filename: 'ascsac-chat.min.js',
     publicPath: '/',
   },
 
@@ -27,6 +26,7 @@ module.exports = {
 
   resolve: {
     alias: {
+      assets: path.resolve(__dirname, './src/assets'),
       components: path.resolve(__dirname, './src/core/components'),
       constants: path.resolve(__dirname, './src/core/constants'),
       core: path.resolve(__dirname, './src/core'),
@@ -47,24 +47,10 @@ module.exports = {
   },
 
   optimization: {
-    runtimeChunk: true,
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /node_modules/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
+    runtimeChunk: false,
   },
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new HtmlWebpackPlugin({
-      title: 'ascsac-chat',
-      template: './src/index.ejs',
-      // config: process.env.APP_ENV || 'config',
-    }),
   ],
 }

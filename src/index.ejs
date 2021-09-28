@@ -98,6 +98,7 @@
       font: inherit;
       vertical-align: baseline;
     }
+
     /* HTML5 display-role reset for older browsers */
     article,
     aside,
@@ -112,17 +113,24 @@
     section {
       display: block;
     }
+
     body {
       line-height: 1;
+      width: 100vw;
+      height: 100vh;
+      background: #f1f1f1;
     }
+
     ol,
     ul {
       list-style: none;
     }
+
     blockquote,
     q {
       quotes: none;
     }
+
     blockquote:before,
     blockquote:after,
     q:before,
@@ -130,15 +138,25 @@
       content: '';
       content: none;
     }
+
     table {
       border-collapse: collapse;
       border-spacing: 0;
+    }
+
+    ascsac-chat {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 400px;
     }
   </style>
 </head>
 
 <body>
-  <ascsac-chat></ascsac-chat>
+  <ascsac-chat font="poppins" theme="default" displayworkername="true" displaycloseicon="false" displaysubtitle="true"
+    displayworkerimage="true" displaymessagetime="true">
+  </ascsac-chat>
 </body>
 
 </html>
