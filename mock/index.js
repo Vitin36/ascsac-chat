@@ -10,7 +10,7 @@ const messages = [
     { workerName: 'Larissa', message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare nulla odio, sit amet condimentum sapien tristique id. Suspendisse potenti.' },
     { workerName: 'Larissa', message: 'Sed ornare nulla odio, sit amet condimentum sapien tristique id. Suspendisse potenti.' },
     { workerName: 'Larissa', message: 'Sed ornare nulla odio, Suspendisse potenti.' },
-    { workerName: 'Larissa', message: 'O que achou do nosso atendimento ? <div style="display:flex; flex-direction: column"><div style="display: flex"><input type="radio" /> <label>Bom</label></div></div>' }
+    // { workerName: 'Larissa', message: 'O que achou do nosso atendimento ? <div style="display:flex; flex-direction: column"><div style="display: flex"><input type="radio" /> <label>Bom</label></div></div>' }
 ]
 
 var currentMessage = -1
