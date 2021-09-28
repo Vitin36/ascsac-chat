@@ -8,7 +8,7 @@ import { Provider } from "react-redux"
 import { store } from "./store"
 import { fonts } from 'constants/fonts'
 
-const App = ({ font, theme, displaycloseicon, displayworkername, displaysubtitle, displayworkerimage, displaymessagetime }) => {
+const App = ({ font, theme, displaycloseicon, displayworkername, displaysubtitle, displayworkerimage, displaymessagetime, displaymultichannel }) => {
     return (
         <Provider store={store}>
             <GlobalStyle fontFamily={font} />
@@ -22,6 +22,7 @@ const App = ({ font, theme, displaycloseicon, displayworkername, displaysubtitle
                     displaySubTitle={displaysubtitle}
                     displayWorkerImage={displayworkerimage}
                     displayMessageTime={displaymessagetime}
+                    displayMultiChannel={displaymultichannel}
                 />
             </Theme>
         </Provider>
@@ -36,6 +37,7 @@ App.propTypes = {
     displaysubtitle: PropTypes.string,
     displayworkerimage: PropTypes.string,
     displaymessagetime: PropTypes.string,
+    displaymultichannel: PropTypes.string
 }
 
 export default App

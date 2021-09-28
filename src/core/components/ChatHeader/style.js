@@ -5,6 +5,9 @@ export const Container = styled.div`
     border-radius: 25px 0 0 0;
     padding: ${padding.m};
     background: ${({ theme }) => theme.colors.primary};
+    position: relative;
+
+    ${({ multiChannel }) => multiChannel ? 'margin-bottom: 20px;' : undefined}
 `
 
 export const Row = styled.div`
@@ -14,7 +17,7 @@ export const Row = styled.div`
     align-items: center;
     justify-content: center;
     padding: 0 48px;
-` 
+`
 
 export const Text = styled.h3`
     padding: 0.25em;
@@ -48,4 +51,13 @@ export const WorkerImage = styled.img`
     border: 1px solid ${({ theme }) => theme.colors.primary};
     position: absolute;
     left: 0;
+`
+
+export const MultiChannel = styled.img`
+    position: absolute;
+    bottom: -20px;
+    width: 75%;
+    right: 50%;
+    transform: translateX(50%);
+    max-width: 400px;
 `

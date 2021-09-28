@@ -2,7 +2,8 @@ import React from "react"
 import downArrow from 'assets/images/downArrow.svg'
 import closeIcon from 'assets/images/closeIcon.svg'
 import worker from 'assets/images/worker.svg'
-import { Container, Row, Text, SubText, Button, WorkerImage } from "./style"
+import multiChannel from 'assets/images/multiChannel.svg'
+import { Container, Row, Text, SubText, Button, WorkerImage, MultiChannel } from "./style"
 import { useSelector, useDispatch } from "react-redux"
 import { actions } from "store/actions/global.actions"
 
@@ -39,8 +40,15 @@ const ChatHeader = () => {
             : null
     )
 
+    const renderDisplayMultiChannel = () => (
+        config.displayMultiChannel ?
+            <MultiChannel src={multiChannel} />
+            : null
+    )
+
     return (
-        <Container className="ChatHeaderContainer">
+        <Container className="ChatHeaderContainer" multiChannel={config.displayMultiChannel}>
+            {renderDisplayMultiChannel()}
             <Row className="ChatHeaderRow">
                 {renderWorkerName()}
                 {renderSubText()}

@@ -4,6 +4,7 @@ export const types = {
     CHANGE_DISPLAY_SUBTITLE: 'CONFIG/CHANGE_DISPLAY_SUBTITLE',
     CHANGE_DISPLAY_WORKER_IMAGE: 'CONFIG/CHANGE_DISPLAY_WORKER_IMAGE',
     CHANGE_DISPLAY_MESSAGE_TIME: 'CONFIG/CHANGE_DISPLAY_MESSAGE_TIME',
+    CHANGE_DISPLAY_MULTI_CHANNEL: 'CONFIG/CHANGE_DISPLAY_MULTI_CHANNEL',
 }
 
 export const actions = {
@@ -12,4 +13,5 @@ export const actions = {
     changeDisplaySubtitle: data => ({ type: types.CHANGE_DISPLAY_SUBTITLE, data }),
     changeDisplayWorkerImage: data => ({ type: types.CHANGE_DISPLAY_WORKER_IMAGE, data }),
     changeDisplayMessageTime: data => ({ type: types.CHANGE_DISPLAY_MESSAGE_TIME, data }),
+    changeDisplayMultiChannel: data => ({ type: types.CHANGE_DISPLAY_MULTI_CHANNEL, data }),
 }
