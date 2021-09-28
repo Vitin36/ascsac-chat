@@ -7,7 +7,7 @@ const initialState = {
     workerName: 'SOFIA',
     messages: [
         { isWorker: true, message: 'Olá, qual o seu nome ?', time: '28/09/2021 03:21:55' },
-        { isWorker: false, message: 'Vitor Hugo Ferreira Silva', time: '28/09/2021 03:22:00' },
+        { isWorker: false, message: 'Gabriel', time: '28/09/2021 03:22:00' },
         { isWorker: true, message: 'Seu protocolo de atendimento é 202000099551<br><br>É sempre um prazer em te atender <b>Gabriel</b><br><br> Em que posso ajudar ?', time: '28/09/2021 03:22:15' },
     ],
     isLoading: false,
@@ -32,8 +32,29 @@ const reducer = {
             ...state,
             messages: [...state.messages, {
                 isWorker: true,
-                message: data,
-                time: getDate()
+                time: getDate(),
+                ...data
+            }]
+        }
+    },
+    [types.ADD_USER_FILE_MESSAGE]: (state, { data }) => {
+        return {
+            ...state,
+            messages: [...state.messages, {
+                isWorker: false,
+                time: getDate(),
+                ...data
+            }]
+        }
+    },
+    [types.FAILED_FILE_MESSAGE]: (state, { data }) => {
+        state.messages[state.messages.length - 1].error = true
+        return {
+            ...state,
+            messages: [...state.messages, {
+                isWorker: true,
+                time: getDate(),
+                ...data
             }]
         }
     },

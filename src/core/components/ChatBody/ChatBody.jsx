@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { Container } from "./style"
 import { Message } from 'components/Message/Message'
 import { Loader } from 'components/Loader/Loader'
+import { FileInput } from "components/FileInput/FileInput"
 import Scroll from 'react-scroll'
 
 const ChatBody = () => {
@@ -17,7 +18,7 @@ const ChatBody = () => {
     }, [messages, isLoading])
 
     const renderMessages = () => (
-        messages.map(({ message, isWorker, time }, key) =>
+        messages.map(({ message, isWorker, time, requestFile, isFile, error, type }, key) =>
             <Message
                 isWorker={isWorker}
                 key={key}
@@ -25,7 +26,12 @@ const ChatBody = () => {
                 message={message}
                 time={time}
                 workerName={workerName}
-            />
+                isFile={isFile}
+                error={error}
+                type={type}
+            >
+                {requestFile ? <FileInput /> : undefined}
+            </Message>
         )
     )
 

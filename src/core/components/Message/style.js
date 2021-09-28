@@ -1,4 +1,5 @@
 import { padding } from "constants/spaces"
+import { theme as themeConstant } from "constants/colors"
 import styled from "styled-components"
 
 export const Container = styled.div`
@@ -32,6 +33,11 @@ export const StyledMessage = styled.div`
     margin-left: 8px;
     text-align: ${({ isWorker }) => isWorker ? `left` : `right`};
     max-width: 80%;
+
+    ${({ isFile }) => isFile ? 'text-decoration: underline;' : undefined}
+    ${({ isFile, error }) => isFile && error ? 'text-decoration: line-through;' : undefined}
+    ${({ type }) => type && themeConstant.modal[type] ? `background-color: ${themeConstant.modal[type]};` : undefined}
+    ${({ type }) => type && themeConstant.modalText[type] ? `color: ${themeConstant.modalText[type]};` : undefined}
 
     & b, & span, & label {
         font-weight: 700;

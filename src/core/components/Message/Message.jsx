@@ -1,11 +1,12 @@
 import React from "react"
 import worker from 'assets/images/worker.svg'
 import parse from "html-react-parser"
-import { Container, Row, StyledMessage, Time, WorkerImage, WorkerName} from "./style"
+import { Container, Row, StyledMessage, Time, WorkerImage, WorkerName } from "./style"
 import { useSelector } from "react-redux"
 
-export const Message = ({ isWorker, message, time, workerName }) => {
+export const Message = ({ isWorker, message, time, workerName, children, isFile, error, type }) => {
     const { displayWorkerImage, displayMessageTime, displayWorkerName } = useSelector(state => state.config)
+    console.log(type)
 
     const renderWorkerImage = () => (
         isWorker && displayWorkerImage ? <WorkerImage src={worker} /> : undefined
@@ -19,9 +20,10 @@ export const Message = ({ isWorker, message, time, workerName }) => {
 
     const renderMessage = () => {
         return (
-            <StyledMessage isWorker={isWorker}>
+            <StyledMessage isWorker={isWorker} isFile={isFile} error={error} type={type}>
                 {displayWorkerName && isWorker ? <WorkerName>{workerName}</WorkerName> : undefined}
                 {parse(message)}
+                {children}
             </StyledMessage>
         )
     }

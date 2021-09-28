@@ -2,7 +2,7 @@ import { types } from "store/actions/global.actions";
 import { createReducer } from "store/utils.js";
 
 const initialState = {
-    toggledChat: true,
+    toggledChat: false,
     closeModal: false,
     hasError: false,
     hasWarning: false,
